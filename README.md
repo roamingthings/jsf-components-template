@@ -17,7 +17,7 @@ It contains a composite component build with a XHTML template and a backing comp
 
 There is also a simple [JUnit](http://junit.org) test.
  
- ### Demo web app
+## Demo web app
  
- The demo web app shows how to use the component library.
+The demo web app shows how to use the component library.
  
