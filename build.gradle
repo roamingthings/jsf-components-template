@@ -1,0 +1,49 @@
+//#####################################################################################################################
+//################################# Global Variables ##################################################################
+//#####################################################################################################################
+ext {
+    vendor = 'Roamingthings - Alexander Sparkowsky'
+
+    // Library versions
+    libraryVersions = [
+            javaee                  : '7.0',
+            wildfly                 : '9.0.1.Final',
+            junit                   : '4.12',
+            mockito                 : '1.10.19',
+            spock                   : '0.7-groovy-2.0',
+            groovy                  : '2.3.11',
+            facesAPI                : '2.2',
+            jstl                    : '1.2'
+    ]
+}
+
+
+// Apply the same group id to all projects
+allprojects {
+    apply plugin: 'maven'
+    apply plugin: 'idea'
+
+    group = 'de.roamingthings.jsf'
+
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+}
+
+version = '1.0-SNAPSHOT'
+
+subprojects {
+    apply plugin: JavaPlugin
+
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+
+    dependencies {
+        // Testing
+        testCompile "junit:junit:${libraryVersions.junit}"
+        testCompile "org.mockito:mockito-all:${libraryVersions.mockito}"
+        testCompile "org.codehaus.groovy:groovy:${libraryVersions.groovy}"
+        testCompile "org.spockframework:spock-core:${libraryVersions.spock}"
+    }
+}

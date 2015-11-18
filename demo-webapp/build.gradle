@@ -1,0 +1,19 @@
+apply plugin: 'war'
+
+version = '1.0-SNAPSHOT'
+
+dependencies {
+	compile(project(':jsf-components'))
+
+    // JavaEE 7
+    providedCompile "javax:javaee-api:${libraryVersions.javaee}"
+    providedCompile "javax.faces:javax.faces-api:${libraryVersions.facesAPI}"
+    providedCompile "javax.servlet:jstl:${libraryVersions.jstl}"
+}
+
+war {
+    // Set final archive name to (only) the project name (without version information)
+	archiveName = project.name + ".war"
+
+    from "$buildDir/webapp"
+}

@@ -1,0 +1,4 @@
+include 'jsf-components'
+include 'demo-webapp'
+
+rootProject.name = 'jsf-components-template'

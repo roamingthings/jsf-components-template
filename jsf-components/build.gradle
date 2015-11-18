@@ -1,0 +1,8 @@
+version = '1.0-SNAPSHOT'
+
+dependencies {
+    // JavaEE 7
+    compile "javax:javaee-api:${libraryVersions.javaee}"
+    compile "javax.faces:javax.faces-api:${libraryVersions.facesAPI}"
+    compile "javax.servlet:jstl:${libraryVersions.jstl}"
+}
